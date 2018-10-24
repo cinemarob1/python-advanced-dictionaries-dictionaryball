@@ -121,8 +121,14 @@ def team_names():
 		names.append(game_dict()[team]['team_name'])
 	return names
 
-def player_numbers():
-    pass
+def player_numbers(search_team):
+	jerz_nums = []
+	for team in game_dict().values():
+		# print(team)
+		if team['team_name'] == search_team:
+			for player in team['players']:
+				jerz_nums.append(team['players'][player]['number'])
+	return jerz_nums
 
 def player_stats():
     pass
@@ -130,6 +136,6 @@ def player_stats():
 ###################################### execute and print
 
 #print(player_info('Brendan Haywood', 'number'))
-print(team_names())
+print(player_numbers('Charlotte Hornets'))
 
 #####################################
