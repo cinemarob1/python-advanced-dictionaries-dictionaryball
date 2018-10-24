@@ -130,12 +130,24 @@ def player_numbers(search_team):
 				jerz_nums.append(team['players'][player]['number'])
 	return jerz_nums
 
-def player_stats():
-    pass
+"""
+def conjoin_teams():
+	conjoined_teams = {game_dict()['home']['players'], game_dict()['away']['players']}
+	return conjoined_teams
+"""
+
+def player_stats(search_name):
+	if search_name in game_dict().values():
+		# print (team)
+		pass
+		
+
 
 ###################################### execute and print
 
 #print(player_info('Brendan Haywood', 'number'))
-print(player_numbers('Charlotte Hornets'))
+# print(player_numbers('Charlotte Hornets'))
+print(conjoin_teams())
+# print(player_stats('Ben Gordon'))
 
 #####################################
