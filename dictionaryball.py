@@ -1,5 +1,3 @@
-import pdb
-
 def game_dict():	
 	home_players = {'Alan Anderson': {'number': 0,
 									'shoe': 16,
@@ -110,8 +108,12 @@ def player_info(player, attribute):
 		attr = game_dict()['home']['players'][player][attribute]
 	return attr
 
-def team_colors():
-    pass
+def team_colors(team):
+    if team == game_dict()['home']['team_name']:
+    	colors = [game_dict()['home']['colors']]
+    else:
+    	colors = [game_dict()['away']['colors']]
+    return colors
 
 def team_names():
     pass
@@ -122,20 +124,9 @@ def player_numbers():
 def player_stats():
     pass
 
-def good_practices():
-  for location, team_stats in game_dict().items():
-    # are you ABSOLUTELY SURE what 'location' and 'team_stats' are? use pdb.set_trace() to find out!
-    import pdb; pdb.set_trace()
-    for stats, data in team_stats.items():
-        # are you ABSOLUTELY SURE what 'stats' and 'data' are? use pdb.set_trace() to find out!
-        import pdb; pdb.set_trace()
-        # what is 'data' at each level of the for loop block? when will we be able to iterate through a list? 
-        # When would the following line of code break?
-        for item in data:
-            print(item)
+###################################### execute and print
 
-######################################
+#print(player_info('Brendan Haywood', 'number'))
+print(team_colors('Charlotte Hornets'))
 
-print(player_info('Brendan Haywood', 'number'))
-
-#(good_practices())
+#####################################
