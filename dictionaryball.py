@@ -116,7 +116,10 @@ def team_colors(team):
     return colors
 
 def team_names():
-    pass
+	names = []
+	for team in game_dict():
+		names.append(game_dict()[team]['team_name'])
+	return names
 
 def player_numbers():
     pass
@@ -127,6 +130,6 @@ def player_stats():
 ###################################### execute and print
 
 #print(player_info('Brendan Haywood', 'number'))
-print(team_colors('Charlotte Hornets'))
+print(team_names())
 
 #####################################
